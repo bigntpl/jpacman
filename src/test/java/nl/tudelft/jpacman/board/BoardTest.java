@@ -13,4 +13,19 @@ public class BoardTest {
         Board board = new Board(grid);
         assertThat(board.invariant()).isTrue();
     }
+
+    @Test
+    void testSquareAt(){
+        Square square = new BasicSquare();
+        Square[][] grid = new Square[1][1];
+        grid[0][0] = square;
+        Board board = new Board(grid);
+        assertThat(board.squareAt(0, 0)).isEqualTo(square);
+    }
+
+    @Test
+    void testSquareAtWithNullSquare(){
+        Square[][] grid = new Square[1][1];
+        Board board = new Board(grid);
+    }
 }
